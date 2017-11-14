@@ -1,7 +1,7 @@
 # combined-loan rate-calculator
 
 ## Overview
-A console rate calculation system allowing prospective borrowers to obtain a quote for selected period loans from a given list of investors, the default is 36.
+A console rate calculation system allowing prospective borrowers to obtain a quote for loans repaid over a selected period from a given list of investors.
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
