@@ -3,10 +3,6 @@
 ## Overview
 A console rate calculation system allowing prospective borrowers to obtain a quote for loans repaid over a selected period from a given list of investors.
 
-## Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-See deployment for notes on how to deploy the project on a live system.
-
 ### Prerequisites
 * Java 1.8 JDK (for installation instructions see [here](https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html))
 
