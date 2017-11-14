@@ -33,6 +33,12 @@ dependencies {
     testCompile 'org.spockframework:spock-core:' + versions.spock
 }
 
+run {
+    if (project.hasProperty("appArgs")) {
+        args findProperty('appArgs').split(' ')
+    }
+}
+
 tasks.withType(JavaExec) {
     // Assign all Java system properties from
     // the command line to the JavaExec task.

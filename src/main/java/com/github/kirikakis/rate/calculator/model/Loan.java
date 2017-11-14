@@ -1,33 +1,31 @@
-package com.github.kirikakis.rate.calculator;
+package com.github.kirikakis.rate.calculator.model;
 
-
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 
 public class Loan {
     private Investor investor;
-    private Double balance;
     private Double annualRate;
+    private Double amount;
+    private Integer durationInMonths;
     private Double monthlyRate;
-    private Double effectiveRate;
     private Double monthlyPayment;
 
-    public Loan(Investor investor, Double annualRate, Double balance) {
+    public Loan(Investor investor, Double annualRate, Double amount, Integer durationInMonths) {
         this.investor = investor;
         this.annualRate = annualRate;
-        this.balance = balance;
+        this.amount = amount;
+        this.durationInMonths = durationInMonths;
 
-        this.monthlyRate = BigDecimal.valueOf(annualRate / 12)
-                .setScale(3, RoundingMode.HALF_UP)
-                .doubleValue();
+        this.monthlyRate = annualRate / 12d;
+
+        calculateMonthlyPayment();
     }
 
     public Investor getInvestor() {
         return investor;
     }
 
-    public Double getBalance() {
-        return balance;
+    public Double getAmount() {
+        return amount;
     }
 
     public Double getAnnualRate() {
@@ -38,15 +36,13 @@ public class Loan {
         return monthlyRate;
     }
 
-    public Double getEffectiveRate() {
-        return effectiveRate;
-    }
-
     public Double getMonthlyPayment() {
         return monthlyPayment;
     }
 
     public void calculateMonthlyPayment() {
+        monthlyPayment = (amount * monthlyRate) /
+                            (1 - Math.pow(1 + monthlyRate, -durationInMonths));
 
     }
 }

@@ -1,4 +1,7 @@
-package com.github.kirikakis.rate.calculator;
+package com.github.kirikakis.rate.calculator.utilities;
+
+import com.github.kirikakis.rate.calculator.model.Investor;
+import com.github.kirikakis.rate.calculator.utilities.BootstrapUtilities;
 
 import org.junit.Test;
 
@@ -14,7 +17,7 @@ public class BootstrapUtilitiesTest {
         List<Investor> returnedInvestors =
                 new BootstrapUtilities().FetchCsvDataFromFile("src/test/resources/sample-data.csv");
 
-        assertEquals(3, returnedInvestors.size());
+        assertEquals(7, returnedInvestors.size());
 
         assertThat(returnedInvestors.get(0).getName(), is("Bob"));
         assertThat(returnedInvestors.get(0).getRate(), is(0.075));

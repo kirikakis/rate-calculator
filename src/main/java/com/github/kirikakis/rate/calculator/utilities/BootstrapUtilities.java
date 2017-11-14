@@ -1,4 +1,6 @@
-package com.github.kirikakis.rate.calculator;
+package com.github.kirikakis.rate.calculator.utilities;
+
+import com.github.kirikakis.rate.calculator.model.Investor;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -12,7 +14,7 @@ import java.util.List;
 
 public class BootstrapUtilities {
 
-    public List<Investor> FetchCsvDataFromFile(String file) throws IOException {
+    public static List<Investor> FetchCsvDataFromFile(String file) throws IOException {
         List<Investor> investors = new ArrayList<>();
         File csvFile = new File(file);
         CSVParser csvParser = CSVParser.parse(csvFile, Charset.defaultCharset(), CSVFormat.RFC4180.withHeader());

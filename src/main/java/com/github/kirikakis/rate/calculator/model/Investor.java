@@ -1,4 +1,4 @@
-package com.github.kirikakis.rate.calculator;
+package com.github.kirikakis.rate.calculator.model;
 
 public class Investor {
     private String name;
